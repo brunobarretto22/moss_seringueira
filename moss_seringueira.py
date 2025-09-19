@@ -32,7 +32,7 @@ centroide = gdf_aud.geometry.centroid.iloc[0]
 centroid_y, centroid_x = centroide.y, centroide.x
 
 # Cria o mapa base com camadas extras
-m = folium.Map(location=[centroid_y, centroid_x], zoom_start=11, tiles=None)
+m = folium.Map(location=[centroid_y, centroid_x], zoom_start=10, tiles=None)
 
 folium.TileLayer('opentopomap', name='OpenTopoMap',show=False).add_to(m)
 folium.TileLayer('Esri.NatGeoWorldMap', name='Esri.NatGeoWorldMap',show=False).add_to(m)
@@ -57,6 +57,7 @@ folium.GeoJson(
 folium.LayerControl().add_to(m)
 
 st_folium(m, width=None, height=600)
+
 
 
 
