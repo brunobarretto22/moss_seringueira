@@ -28,7 +28,7 @@ gdf_aud = gpd.read_file('PA_AUD_Seringueira_Agrupado.shp')
 # print(gdf_aud.head())
 
 # Cálculo do centróide para o mapa
-centroide = gdf_aud.geometry.centroid.iloc[0]
+centroide = gdf_apd.geometry.centroid.iloc[0]
 centroid_y, centroid_x = centroide.y, centroide.x
 
 # Cria o mapa base com camadas extras
@@ -57,6 +57,7 @@ folium.GeoJson(
 folium.LayerControl().add_to(m)
 
 st_folium(m, width=None, height=600)
+
 
 
 
