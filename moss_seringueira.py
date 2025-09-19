@@ -21,8 +21,8 @@ st.markdown(
     unsafe_allow_html=True)
 
 # # Carregar o shapefile dos municípios do Mato Grosso (MT)
-gdf_apd = gpd.read_file('D:/moss_seringueira/PA_APD_Seringueira_Agrupado.shp')
-gdf_aud = gpd.read_file('D:/moss_seringueira/PA_AUD_Seringueira_Agrupado.shp')
+gdf_apd = gpd.read_file('/moss_seringueira/PA_APD_Seringueira_Agrupado.shp')
+gdf_aud = gpd.read_file('/moss_seringueira/PA_AUD_Seringueira_Agrupado.shp')
 
 # print(gdf_apd.head())
 # print(gdf_aud.head())
@@ -56,4 +56,5 @@ folium.GeoJson(
 
 # Controle das camadas de fundo
 folium.LayerControl().add_to(m)
+
 st_folium(m, width=None, height=600)
