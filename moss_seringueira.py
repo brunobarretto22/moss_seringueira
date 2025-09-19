@@ -36,14 +36,14 @@ m = folium.Map(location=[centroid_y, centroid_x], zoom_start=8, tiles=None)
 
 folium.TileLayer('opentopomap', name='OpenTopoMap',show=False).add_to(m)
 folium.TileLayer('Esri.NatGeoWorldMap', name='Esri.NatGeoWorldMap',show=False).add_to(m)
-folium.TileLayer('Stadia.AlidadeSatellite', name='ImageSatellite',show=False).add_to(m)
 folium.TileLayer('OpenStreetMap', name='OpenStreetMap').add_to(m)
+folium.TileLayer('Stadia.AlidadeSatellite', name='ImageSatellite',show=False).add_to(m)
 
     # Polígono do município selecionado (destaque vermelho)
 folium.GeoJson(
     gdf_aud,
     name='PA_AUD_Seringueira_Agrupado',
-    style_function=lambda x: {'color': 'pink', 'weight': 3, 'fillOpacity': 0.1}
+    style_function=lambda x: {'color': 'purple', 'weight': 3, 'fillOpacity': 0.1}
 ).add_to(m)
 
     # Polígono do Estado selecionado (destaque cinza)
@@ -51,12 +51,12 @@ folium.GeoJson(
     gdf_apd,
     name='PA_APD_Seringueira_Agrupado',
     style_function=lambda x: {'color': 'yellow', 'weight': 2, 'fillOpacity': 0.1},
-    control=False
 ).add_to(m)
 
 # Controle das camadas de fundo
 folium.LayerControl().add_to(m)
 
 st_folium(m, width=None, height=600)
+
 
 
