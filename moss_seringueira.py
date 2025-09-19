@@ -36,8 +36,8 @@ m = folium.Map(location=[centroid_y, centroid_x], zoom_start=10, tiles=None)
 
 folium.TileLayer('opentopomap', name='OpenTopoMap',show=False).add_to(m)
 folium.TileLayer('Esri.NatGeoWorldMap', name='Esri.NatGeoWorldMap',show=False).add_to(m)
-folium.TileLayer('OpenStreetMap', name='OpenStreetMap').add_to(m)
-folium.TileLayer('Stadia.AlidadeSatellite', name='ImageSatellite',show=False).add_to(m)
+folium.TileLayer('OpenStreetMap', name='OpenStreetMap',show=False).add_to(m)
+folium.TileLayer('Stadia.AlidadeSatellite', name='ImageSatellite').add_to(m)
 
     # Polígono do município selecionado (destaque vermelho)
 folium.GeoJson(
@@ -57,6 +57,7 @@ folium.GeoJson(
 folium.LayerControl().add_to(m)
 
 st_folium(m, width=None, height=600)
+
 
 
 
